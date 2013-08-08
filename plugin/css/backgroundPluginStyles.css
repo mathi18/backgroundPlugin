@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+div.backgroundElement {
+	border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px; 
+	position: absolute;
+}
