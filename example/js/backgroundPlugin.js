@@ -57,10 +57,12 @@
         };
         
         function init($parent) {
-        	$parent.find('.backgroundElement').each(function() {
+        	$parent.find('.backgroundContainer').each(function() {
         		$(this).remove();
         	});
-        	console.log($parent);
+        	
+			var $container = $('<div>');
+			$container.addClass('backgroundContainer');
         	
         	var parentWidth = settings.fullWindow === true ? $( window ).width() : $parent.width();
         	var parentHeight = settings.fullWindow === true ? $( window ).height() : $parent.height();
@@ -84,9 +86,11 @@
         						  'width' : settings.elementSize + 'px',
         						  'height' : settings.elementSize + 'px'});
         			
-        			$parent.append($element);
+        			$container.append($element);
         		}
         	}
+
+			$parent.append($container);
         	
         	if(settings.animate == true) {
         		intervalId = setInterval( function() {
